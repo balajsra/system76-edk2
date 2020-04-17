@@ -63,6 +63,12 @@
   # GENERIC: GenericMemoryTestDxe
   #
   DEFINE MEMORY_TEST                  = NULL
+
+  #
+  # Send logs to System76 EC
+  #
+  DEFINE SYSTEM76_EC_LOGGING          = FALSE
+
   #
   # SBL:      UEFI payload for Slim Bootloader
   # COREBOOT: UEFI payload for coreboot
@@ -260,7 +266,10 @@
   CustomizedDisplayLib|MdeModulePkg/Library/CustomizedDisplayLib/CustomizedDisplayLib.inf
   FrameBufferBltLib|MdeModulePkg/Library/FrameBufferBltLib/FrameBufferBltLib.inf
   ResetSystemLib|UefiPayloadPkg/Library/ResetSystemLib/ResetSystemLib.inf
-!if $(USE_CBMEM_FOR_CONSOLE) == TRUE
+!if $(SYSTEM76_EC_LOGGING) == TRUE
+  SerialPortLib|UefiPayloadPkg/Library/System76EcLib/System76EcLib.inf
+  PlatformHookLib|UefiPayloadPkg/Library/System76EcLib/System76EcLib.inf
+!elseif $(USE_CBMEM_FOR_CONSOLE) == TRUE
   SerialPortLib|UefiPayloadPkg/Library/CbSerialPortLib/CbSerialPortLib.inf
   PlatformHookLib|MdeModulePkg/Library/BasePlatformHookLibNull/BasePlatformHookLibNull.inf
 !else
