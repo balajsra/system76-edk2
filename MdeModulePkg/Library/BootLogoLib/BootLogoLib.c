@@ -196,6 +196,12 @@ BootLogoEnableLogo (
         DestY = SizeOfY - Image.Height;
         break;
 
+      case EdkiiPlatformLogoDisplayAttributeMicrosoft:
+        // Position the logo so that its center is 38.2% from the top.
+        DestX = (SizeOfX - Image.Width) / 2;
+        DestY = (SizeOfY * 382) / 1000 - Image.Height / 2;
+        break;
+
       default:
         ASSERT (FALSE);
         continue;
