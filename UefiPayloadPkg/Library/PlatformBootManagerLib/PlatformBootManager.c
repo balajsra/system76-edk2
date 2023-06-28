@@ -315,7 +315,7 @@ PlatformBootManagerAfterConsole (
   //
   // Register UEFI Shell
   //
-  PlatformRegisterFvBootOption (&gUefiShellFileGuid, L"UEFI Shell", LOAD_OPTION_ACTIVE);
+  //PlatformRegisterFvBootOption (&gUefiShellFileGuid, L"UEFI Shell", LOAD_OPTION_ACTIVE);
 
   if (FixedPcdGetBool (PcdBootManagerEscape)) {
       BootText = L"Press ESC for Boot Options/Settings, or SPACE for Pop!_OS Recovery";
