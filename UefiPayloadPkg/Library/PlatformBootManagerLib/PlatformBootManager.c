@@ -297,6 +297,7 @@ PlatformBootManagerAfterConsole (
   EFI_GRAPHICS_OUTPUT_BLT_PIXEL  White;
   EDKII_PLATFORM_LOGO_PROTOCOL   *PlatformLogo;
   EFI_STATUS                     Status;
+  CHAR16 *BootText = NULL;
 
   Black.Blue = Black.Green = Black.Red = Black.Reserved = 0;
   White.Blue = White.Green = White.Red = White.Reserved = 0xFF;
@@ -317,20 +318,19 @@ PlatformBootManagerAfterConsole (
   PlatformRegisterFvBootOption (&gUefiShellFileGuid, L"UEFI Shell", LOAD_OPTION_ACTIVE);
 
   if (FixedPcdGetBool (PcdBootManagerEscape)) {
-    Print (
-      L"\n"
-      L"    Esc or Down      to enter Boot Manager Menu.\n"
-      L"    ENTER            to boot directly.\n"
-      L"\n"
-      );
+      BootText = L"Press ESC for Boot Options/Settings, or SPACE for Pop!_OS Recovery";
   } else {
-    Print (
-      L"\n"
-      L"    F2 or Down      to enter Boot Manager Menu.\n"
-      L"    ENTER           to boot directly.\n"
-      L"\n"
-      );
+      BootText = L"Press F2 for Boot Options/Settings, or SPACE for Pop!_OS Recovery";
   }
+
+  BootLogoUpdateProgress (
+    White,
+    Black,
+    BootText,
+    White,
+    0,
+    0
+    );
 }
 
 /**
