@@ -706,6 +706,11 @@
   }
 !endif
 
+  #
+  # Firmware update
+  #
+  MdeModulePkg/Universal/EsrtFmpDxe/EsrtFmpDxe.inf
+
   #------------------------------
   #  Build the shell
   #------------------------------

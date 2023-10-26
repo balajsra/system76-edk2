@@ -279,6 +279,11 @@ INF SecurityPkg/RandomNumberGenerator/RngDxe/RngDxe.inf
 !endif
 
 #
+# Firmware update
+#
+INF MdeModulePkg/Universal/EsrtFmpDxe/EsrtFmpDxe.inf
+
+#
 # Shell
 #
 !if $(SHELL_TYPE) == BUILD_SHELL
