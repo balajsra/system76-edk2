@@ -113,7 +113,6 @@ INF PcAtChipsetPkg/HpetTimerDxe/HpetTimerDxe.inf
 INF MdeModulePkg/Universal/Metronome/Metronome.inf
 INF MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
 INF MdeModulePkg/Core/RuntimeDxe/RuntimeDxe.inf
-INF MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf
 INF MdeModulePkg/Universal/MonotonicCounterRuntimeDxe/MonotonicCounterRuntimeDxe.inf
 
 !if $(DISABLE_RESET_SYSTEM) == FALSE
@@ -282,6 +281,8 @@ INF SecurityPkg/RandomNumberGenerator/RngDxe/RngDxe.inf
 # Firmware update
 #
 INF MdeModulePkg/Universal/EsrtFmpDxe/EsrtFmpDxe.inf
+INF MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf
+INF FILE_GUID = $(EC_FMP_ESRT_GUID) FmpDevicePkg/FmpDxe/FmpDxe.inf
 
 #
 # Shell

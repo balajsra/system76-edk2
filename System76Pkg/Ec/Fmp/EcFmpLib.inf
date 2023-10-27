@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: MPL-2.0
+# SPDX-FileCopyrightText: 2023 System76, Inc.
+
+[Defines]
+  INF_VERSION = 1.27
+  BASE_NAME = EcFmpLib
+  FILE_GUID = 760B7155-99F7-4E8E-8C07-D38A75F54C54
+  MODULE_TYPE = DXE_DRIVER
+  VERSION_STRING = 0.1
+  LIBRARY_CLASS = FmpDeviceLib|DXE_DRIVER
+
+[Sources]
+  EcFmpLib.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  FmpDevicePkg/FmpDevicePkg.dec
+
+[LibraryClasses]
+  UefiBootServicesTableLib
