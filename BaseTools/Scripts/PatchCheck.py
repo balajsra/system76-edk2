@@ -237,7 +237,7 @@ class CommitMessageCheck:
             if sigtype == 'Cc' and len(sigs) == 0:
                 self.error('No Cc: tags for maintainers/reviewers found!')
 
-    cve_re = re.compile('CVE-[0-9]{4}-[0-9]{5}[^0-9]')
+    cve_re = re.compile(r'CVE-[0-9]{4}-[0-9]{5}[^0-9]')
 
     def check_overall_format(self):
         lines = self.msg.splitlines()

@@ -21,7 +21,7 @@ from CommonDataClass.Exceptions import *
 from Common.LongFilePathSupport import OpenLongFilePath as open
 from Common.MultipleWorkspace import MultipleWorkspace as mws
 
-gHexVerPatt = re.compile('0x[a-f0-9]{4}[a-f0-9]{4}$', re.IGNORECASE)
+gHexVerPatt = re.compile(r'0x[a-f0-9]{4}[a-f0-9]{4}$', re.IGNORECASE)
 gHumanReadableVerPatt = re.compile(r'([1-9][0-9]*|0)\.[0-9]{1,2}$')
 
 ## GetSplitValueList

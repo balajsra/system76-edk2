@@ -23,7 +23,7 @@ from Logger import StringTable as ST
 #
 # Regular expression for matching macro used in DSC/DEC/INF file inclusion
 #
-gMACRO_PATTERN = re.compile("\$\(([_A-Z][_A-Z0-9]*)\)", re.UNICODE)
+gMACRO_PATTERN = re.compile(r"\$\(([_A-Z][_A-Z0-9]*)\)", re.UNICODE)
 
 ## GetSplitValueList
 #
@@ -167,7 +167,7 @@ def ReplaceMacro(String, MacroDefinitions=None, SelfReplacement=False, Line=None
         if not Flag:
             MacroUsed = gMACRO_PATTERN.findall(String)
         else:
-            ReQuotedString = re.compile('\"')
+            ReQuotedString = re.compile(r'\"')
             QuotedStringList = ReQuotedString.split(String)
             if len(QuotedStringList) >= 3:
                 HaveQuotedMacroFlag = True

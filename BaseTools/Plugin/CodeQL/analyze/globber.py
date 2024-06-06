@@ -34,7 +34,7 @@
 import re
 
 _double_star_after_invalid_regex = re.compile(r'[^/\\]\*\*')
-_double_star_first_before_invalid_regex = re.compile('^\\*\\*[^/]')
+_double_star_first_before_invalid_regex = re.compile(r'^\\*\\*[^/]')
 _double_star_middle_before_invalid_regex = re.compile(r'[^\\]\*\*[^/]')
 
 

@@ -611,10 +611,10 @@ def ValidatePcdValueOnDatumType(Value, Type):
 
     elif Type == 'UINT8' or Type == 'UINT16' or Type == 'UINT32' or Type == 'UINT64':
 
-        ReIsValidUint8z = re.compile('^0[x|X][a-fA-F0-9]{2}$')
-        ReIsValidUint16z = re.compile('^0[x|X][a-fA-F0-9]{4}$')
-        ReIsValidUint32z = re.compile('^0[x|X][a-fA-F0-9]{8}$')
-        ReIsValidUint64z = re.compile('^0[x|X][a-fA-F0-9]{16}$')
+        ReIsValidUint8z = re.compile(r'^0[x|X][a-fA-F0-9]{2}$')
+        ReIsValidUint16z = re.compile(r'^0[x|X][a-fA-F0-9]{4}$')
+        ReIsValidUint32z = re.compile(r'^0[x|X][a-fA-F0-9]{8}$')
+        ReIsValidUint64z = re.compile(r'^0[x|X][a-fA-F0-9]{16}$')
 
         if not ReIsValidUint8z.match(Value) and Type == 'UINT8':
             return False

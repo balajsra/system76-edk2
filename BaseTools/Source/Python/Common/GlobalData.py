@@ -54,7 +54,7 @@ gHexPattern = re.compile(r'0[xX]{}+'.format(_HexChar))
 gHexPatternAll = re.compile(r'0[xX]{}+$'.format(_HexChar))
 
 ## Regular expressions for string identifier checking
-gIdentifierPattern = re.compile('^[a-zA-Z][a-zA-Z0-9_]*$', re.UNICODE)
+gIdentifierPattern = re.compile(r'^[a-zA-Z][a-zA-Z0-9_]*$', re.UNICODE)
 ## Regular expression for GUID c structure format
 _GuidCFormatPattern = r"{{\s*0[xX]{Hex}{{1,8}}\s*,\s*0[xX]{Hex}{{1,4}}\s*,\s*0[xX]{Hex}{{1,4}}" \
                       r"\s*,\s*{{\s*0[xX]{Hex}{{1,2}}\s*,\s*0[xX]{Hex}{{1,2}}" \
